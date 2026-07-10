@@ -3,9 +3,11 @@ package com.example.crudproject.dto;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 public class StudentRequestDto {
     @NotBlank(message = "name can not be blank")
+    @Size(min=2,max=50, message = "student name must be within 2 to 50 character long")
     private String name;
 
     @Min(value=18)
